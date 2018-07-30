@@ -1,0 +1,21 @@
+CC=g++
+
+CFLAGS=-std=c++11 
+
+LINK_THREAD=-pthread
+
+EFLAGS=-o
+
+all: berkeley causalordering noncausalordering
+
+berkeley: 
+	$(CC) $(CFLAGS) $(EFLAGS) berkeley Berkeley.cpp $(LINK_THREAD)
+
+causalordering: 
+	$(CC) $(CFLAGS) $(EFLAGS) causalordering CausalOrdering.cpp $(LINK_THREAD)
+
+noncausalordering:
+	$(CC) $(CFLAGS) $(EFLAGS) noncausalordering NonCausalOrdering.cpp $(LINK_THREAD)
+
+clean:
+	rm -rf *.o berkeley causalordering noncausalordering
